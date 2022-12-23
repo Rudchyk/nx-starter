@@ -4,6 +4,11 @@
 dist
 tmp
 /out-tsc
+TODO
+temp
+Makefile
+logs
+.env.local
 
 # dependencies
 node_modules

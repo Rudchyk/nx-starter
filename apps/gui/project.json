@@ -16,7 +16,7 @@
         "main": "apps/gui/src/main.tsx",
         "polyfills": "apps/gui/src/polyfills.ts",
         "tsConfig": "apps/gui/tsconfig.app.json",
-        "assets": ["apps/gui/src/favicon.ico", "apps/gui/src/assets"],
+        "assets": ["apps/gui/src/favicon.ico", "apps/gui/src/assets", "apps/gui/src/robots.txt"],
         "styles": ["apps/gui/src/styles.scss"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
@@ -48,8 +48,10 @@
       "executor": "@nrwl/webpack:dev-server",
       "defaultConfiguration": "development",
       "options": {
+        "port": 3332,
         "buildTarget": "gui:build",
-        "hmr": true
+        "hmr": true,
+        "proxyConfig": "apps/gui/proxy.conf.json"
       },
       "configurations": {
         "development": {
