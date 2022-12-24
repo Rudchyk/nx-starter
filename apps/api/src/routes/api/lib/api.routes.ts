@@ -1,5 +1,6 @@
 import { apiController } from '@api/controllers';
 import { ServerApiRoutesEnum } from '@constants';
+import { basicAuthValidator } from '@api/validators';
 
 enum OperationIdsEnum {
   GET = 'getAPIIndex',
@@ -11,6 +12,11 @@ export const apiRoutes = {
       get: {
         summary: 'API',
         operationId: OperationIdsEnum.GET,
+        security: [
+          {
+            basicAuth: [],
+          },
+        ],
         responses: {
           default: {
             description: 'return data',
@@ -20,6 +26,6 @@ export const apiRoutes = {
     },
   },
   operation: {
-    [OperationIdsEnum.GET]: [apiController],
+    [OperationIdsEnum.GET]: [basicAuthValidator, apiController],
   },
 };

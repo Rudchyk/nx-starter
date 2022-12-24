@@ -7,6 +7,7 @@ export const apiController = (req: Request, res: Response, next: NextFunction) =
       cookies: req.cookies,
       session: req.session,
       headers: req.headers,
+      test: 'hello',
       NODE_ENV: process.env.NODE_ENV,
     });
   } catch (error) {
